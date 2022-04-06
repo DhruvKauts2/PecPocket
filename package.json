@@ -1,0 +1,23 @@
+{
+  "name": "Backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DhruvKauts2/PecPocket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DhruvKauts2/PecPocket/issues"
+  },
+  "homepage": "https://github.com/DhruvKauts2/PecPocket#readme",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
