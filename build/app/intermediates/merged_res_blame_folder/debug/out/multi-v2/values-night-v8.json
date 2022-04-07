@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kauts/projects/pecpocket/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/kauts/projects/Frontend/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/kauts/projects/pecpocket/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/kauts/projects/Frontend/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

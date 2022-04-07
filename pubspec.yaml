@@ -30,15 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_staggered_grid_view: ^0.6.1
   introduction_screen: ^3.0.2
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
@@ -60,7 +55,12 @@ flutter:
     - assets/intro3.png
     - assets/intro4.png
     - assets/intro5.png
-
+    - assets/1.png
+    - assets/11.png
+    - assets/16.png
+    - assets/20.png
+    - assets/22.png
+    - assets/25.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
