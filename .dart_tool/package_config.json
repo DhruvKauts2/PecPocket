@@ -44,6 +44,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dart2_constant",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dart2_constant-1.0.2+dart2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "dots_indicator",
       "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-2.1.0",
       "packageUri": "lib/",
@@ -80,6 +86,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "http",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "introduction_screen",
       "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/introduction_screen-3.0.2",
       "packageUri": "lib/",
@@ -90,6 +114,18 @@
       "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/logging-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mailer2",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mailer2-1.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "matcher",
@@ -106,6 +142,12 @@
     {
       "name": "meta",
       "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mime",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -176,7 +218,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-07T10:20:03.950066Z",
+  "generated": "2022-04-10T11:09:21.300930Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
