@@ -1,4 +1,0 @@
-#Wed Apr 06 05:49:58 IST 2022
-base.0=/home/kauts/projects/pecpocket/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
