@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:pecpocket/screens/ChooseAvatar.dart';
+import 'package:pecpocket/screens/ChooseClubs.dart';
 import 'package:pecpocket/screens/ChooseSubjects.dart';
 import 'package:pecpocket/screens/IntroductionPage.dart';
 import 'package:pecpocket/screens/SignUp.dart';
@@ -17,7 +18,7 @@ class EntryPoint extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChooseSubjects(),
+      home: ChooseClubs(),
     );
   }
 }

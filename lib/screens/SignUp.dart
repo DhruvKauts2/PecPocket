@@ -149,10 +149,6 @@ class _SignUpState extends State<SignUp> {
   void checkOTP() {
     if (otpTextController.text == otp.toString()) {
       setState(() {
-        for (int i = 1; i < 56; i++) {
-          if (i == 41) continue;
-          avatarList.add('${i}.png');
-        }
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => ChooseAvatar()));
       });
