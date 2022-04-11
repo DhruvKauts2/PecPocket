@@ -8,6 +8,7 @@ const Super = require("./models/super");
 const SignUp = require("./models/signup");
 const LoggedIn = require("./models/login");
 const Subjects = require("./models/subjects");
+const Clubs = require("./models/club");
 const DB =
   "mongodb+srv://kauts:eFcnmKIGq2PmRaQa@cluster0.ftzct.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
@@ -91,6 +92,15 @@ app.get('/Subjects/:subject', async(req, res, next) => {
 
   const result = await Subjects.find(query);
   res.send(result);
+})
+
+app.get('/Clubs/:club', async(req,res, next) =>{
+  
+  const {club} = req.params;
+  const query = { $text: { $search : club}};
+  const result = await Clubs.find(query);
+  res.send(result);
+
 })
 
 app.listen(port, () => {});
