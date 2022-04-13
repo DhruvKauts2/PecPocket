@@ -3,7 +3,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const csv = require('jquery-csv');
+const csv = require("jquery-csv");
+const CustomReminder = require("./models/customReminder");
 const Super = require("./models/super");
 const SignUp = require("./models/signup");
 const LoggedIn = require("./models/login");
@@ -81,26 +82,90 @@ app.get("/LogIn", async (req, res) => {
   res.send("Logged In");
 });
 
-app.get('/Subjects/:subject', async(req, res, next) => {
-  const {subject} = req.params;
-  const query = { $text: { $search : subject}};
+app.get("/Subjects/:subject", async (req, res, next) => {
+  const { subject } = req.params;
+  const query = { $text: { $search: subject } };
   const projection = {
     _id: 0,
-    subjectName : "subjectName",
-    subjectCode : "subjectCode"
-  }
+    subjectName: "subjectName",
+    subjectCode: "subjectCode",
+  };
 
   const result = await Subjects.find(query);
   res.send(result);
-})
+});
 
-app.get('/Clubs/:club', async(req,res, next) =>{
-  
-  const {club} = req.params;
-  const query = { $text: { $search : club}};
+app.get("/Clubs/:club", async (req, res, next) => {
+  const { club } = req.params;
+  const query = { $text: { $search: club } };
   const result = await Clubs.find(query);
   res.send(result);
+});
 
-})
+app.post("/CustomReminders", async (req, res, next) => {
+  const sid = req.body["sid"];
 
+  const reminderTitle = req.body["reminderTitle"];
+  const reminderDescription = req.body["reminderDescription"];
+  const reminderWeekDay = req.body["reminderWeekDay"];
+  const reminderMonth = req.body["reminderMonth"];
+  const reminderDay = req.body["reminderDay"];
+  const reminderYear = req.body["reminderYear"];
+  const reminderStartHour = req.body["reminderStartHour"];
+  const reminderStartMinute = req.body["reminderStartMinute"];
+  const reminderEndHour = req.body["reminderEndHour"];
+  const reminderEndMinute = req.body["reminderEndMinute"];
+
+  await CustomReminder.create({
+    sid: sid,
+    reminderTitle: reminderTitle,
+    reminderDescription: reminderDescription,
+    reminderWeekDay: reminderWeekDay,
+    reminderMonth: reminderMonth,
+    reminderDay: reminderDay,
+    reminderYear: reminderYear,
+    reminderStartHour: reminderStartHour,
+    reminderStartMinute: reminderStartMinute,
+    reminderEndHour: reminderEndHour,
+    reminderEndMinute: reminderEndMinute,
+  });
+
+  res.send("Created");
+});
+
+app.get("/CustomReminders/:sid", async (req, res) => {
+  const { sid } = req.params;
+  var result = await CustomReminder.find({ sid: sid });
+  res.send(result);
+});
+
+app.delete("/CustomReminders", async (req, res) => {
+  const sid = req.body["sid"];
+  const reminderTitle = req.body["reminderTitle"];
+  const reminderDescription = req.body["reminderDescription"];
+  const reminderWeekDay = req.body["reminderWeekDay"];
+  const reminderMonth = req.body["reminderMonth"];
+  const reminderDay = req.body["reminderDay"];
+  const reminderYear = req.body["reminderYear"];
+  const reminderStartHour = req.body["reminderStartHour"];
+  const reminderStartMinute = req.body["reminderStartMinute"];
+  const reminderEndHour = req.body["reminderEndHour"];
+  const reminderEndMinute = req.body["reminderEndMinute"];
+
+  await CustomReminder.deleteOne({
+    sid: sid,
+    reminderTitle: reminderTitle,
+    reminderDescription: reminderDescription,
+    reminderWeekDay: reminderWeekDay,
+    reminderMonth: reminderMonth,
+    reminderDay: reminderDay,
+    reminderYear: reminderYear,
+    reminderStartHour: reminderStartHour,
+    reminderStartMinute: reminderStartMinute,
+    reminderEndHour: reminderEndHour,
+    reminderEndMinute: reminderEndMinute,
+  });
+
+  res.send("Deleted");
+});
 app.listen(port, () => {});
