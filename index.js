@@ -107,27 +107,15 @@ app.post("/CustomReminders", async (req, res, next) => {
 
   const reminderTitle = req.body["reminderTitle"];
   const reminderDescription = req.body["reminderDescription"];
-  const reminderWeekDay = req.body["reminderWeekDay"];
-  const reminderMonth = req.body["reminderMonth"];
-  const reminderDay = req.body["reminderDay"];
-  const reminderYear = req.body["reminderYear"];
-  const reminderStartHour = req.body["reminderStartHour"];
-  const reminderStartMinute = req.body["reminderStartMinute"];
-  const reminderEndHour = req.body["reminderEndHour"];
-  const reminderEndMinute = req.body["reminderEndMinute"];
+  const reminderDate = req.body["reminderDate"];
+  const reminderTime = req.body["reminderTime"];
 
   await CustomReminder.create({
     sid: sid,
     reminderTitle: reminderTitle,
     reminderDescription: reminderDescription,
-    reminderWeekDay: reminderWeekDay,
-    reminderMonth: reminderMonth,
-    reminderDay: reminderDay,
-    reminderYear: reminderYear,
-    reminderStartHour: reminderStartHour,
-    reminderStartMinute: reminderStartMinute,
-    reminderEndHour: reminderEndHour,
-    reminderEndMinute: reminderEndMinute,
+    reminderDate: reminderDate,
+    reminderTime: reminderTime,
   });
 
   res.send("Created");
@@ -143,27 +131,15 @@ app.delete("/CustomReminders", async (req, res) => {
   const sid = req.body["sid"];
   const reminderTitle = req.body["reminderTitle"];
   const reminderDescription = req.body["reminderDescription"];
-  const reminderWeekDay = req.body["reminderWeekDay"];
-  const reminderMonth = req.body["reminderMonth"];
-  const reminderDay = req.body["reminderDay"];
-  const reminderYear = req.body["reminderYear"];
-  const reminderStartHour = req.body["reminderStartHour"];
-  const reminderStartMinute = req.body["reminderStartMinute"];
-  const reminderEndHour = req.body["reminderEndHour"];
-  const reminderEndMinute = req.body["reminderEndMinute"];
+  const reminderDate = req.body["reminderDate"];
+  const reminderTime = req.body["reminderTime"];
 
   await CustomReminder.deleteOne({
     sid: sid,
     reminderTitle: reminderTitle,
     reminderDescription: reminderDescription,
-    reminderWeekDay: reminderWeekDay,
-    reminderMonth: reminderMonth,
-    reminderDay: reminderDay,
-    reminderYear: reminderYear,
-    reminderStartHour: reminderStartHour,
-    reminderStartMinute: reminderStartMinute,
-    reminderEndHour: reminderEndHour,
-    reminderEndMinute: reminderEndMinute,
+    reminderDate: reminderDate,
+    reminderTime: reminderTime,
   });
 
   res.send("Deleted");
