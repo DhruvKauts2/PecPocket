@@ -1,1 +1,1 @@
-const apiUrl = "https://c994-180-188-224-169.ngrok.io";
+const apiUrl = "https://f2fa-180-188-224-169.ngrok.io";

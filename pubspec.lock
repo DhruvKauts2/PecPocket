@@ -57,6 +57,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2+dart2"
+  date_time_picker:
+    dependency: "direct main"
+    description:
+      name: date_time_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   dots_indicator:
     dependency: transitive
     description:
@@ -64,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  draggable_bottom_sheet:
+    dependency: "direct main"
+    description:
+      name: draggable_bottom_sheet
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   fake_async:
     dependency: transitive
     description:
@@ -76,6 +90,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_ckb_localization:
+    dependency: "direct main"
+    description:
+      name: flutter_ckb_localization
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -83,6 +104,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_staggered_grid_view:
     dependency: "direct main"
     description:
@@ -110,12 +136,12 @@ packages:
     source: hosted
     version: "4.0.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.0"
+    version: "0.16.1"
   introduction_screen:
     dependency: "direct main"
     description:

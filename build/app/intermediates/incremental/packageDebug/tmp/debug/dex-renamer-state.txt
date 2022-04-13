@@ -1,4 +1,4 @@
-#Mon Apr 11 23:35:50 IST 2022
+#Wed Apr 13 18:12:40 IST 2022
 base.0=/home/kauts/projects/Frontend/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

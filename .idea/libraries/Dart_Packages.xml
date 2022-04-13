@@ -58,10 +58,24 @@
             </list>
           </value>
         </entry>
+        <entry key="date_time_picker">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/date_time_picker-2.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="dots_indicator">
           <value>
             <list>
               <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-2.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="draggable_bottom_sheet">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/draggable_bottom_sheet-0.1.2/lib" />
             </list>
           </value>
         </entry>
@@ -79,10 +93,24 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_ckb_localization">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_ckb_localization-0.0.6/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_lints">
           <value>
             <list>
               <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_localizations">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/packages/flutter_localizations/lib" />
             </list>
           </value>
         </entry>
@@ -117,7 +145,7 @@
         <entry key="intl">
           <value>
             <list>
-              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1/lib" />
             </list>
           </value>
         </entry>
@@ -266,13 +294,16 @@
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dart2_constant-1.0.2+dart2/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/date_time_picker-2.1.0/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-2.1.0/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/draggable_bottom_sheet-0.1.2/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_ckb_localization-0.0.6/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_staggered_grid_view-0.6.1/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib" />
-      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/introduction_screen-3.0.2/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/logging-1.0.2/lib" />
@@ -292,6 +323,7 @@
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.1/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/packages/flutter/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/packages/flutter_localizations/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/packages/flutter_test/lib" />
     </CLASSES>
     <JAVADOC />

@@ -50,10 +50,22 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "date_time_picker",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/date_time_picker-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "dots_indicator",
       "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "draggable_bottom_sheet",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/draggable_bottom_sheet-0.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "fake_async",
@@ -68,8 +80,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_ckb_localization",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_ckb_localization-0.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_localizations",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -99,9 +123,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "rootUri": "file:///home/kauts/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.5"
     },
     {
       "name": "introduction_screen",
@@ -218,7 +242,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-11T07:00:51.337548Z",
+  "generated": "2022-04-13T12:07:14.451675Z",
   "generator": "pub",
-  "generatorVersion": "2.16.1"
+  "generatorVersion": "2.16.2"
 }
