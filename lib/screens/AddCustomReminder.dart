@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pecpocket/globals.dart' as global;
+import 'package:pecpocket/screens/MainPage.dart';
 
 class AddCustomReminder extends StatefulWidget {
   const AddCustomReminder({Key? key}) : super(key: key);
@@ -92,6 +93,7 @@ class _AddCustomReminderState extends State<AddCustomReminder> {
         'reminderTime': reminderTime
       }),
     );
-    print(response);
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => MainPage()));
   }
 }

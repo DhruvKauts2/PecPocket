@@ -7,6 +7,7 @@ import 'package:draggable_bottom_sheet/draggable_bottom_sheet.dart';
 import 'package:http/http.dart' as http;
 import 'package:pecpocket/globals.dart' as global;
 import 'package:pecpocket/main.dart';
+import 'package:pecpocket/parsingModels/attendanceModel.dart';
 import 'package:pecpocket/parsingModels/customReminderModel.dart';
 import 'package:pecpocket/screens/AddCustomReminder.dart';
 import 'dart:convert';
