@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const csv = require("jquery-csv");
+const Attendance = require("./models/attendance");
 const CustomReminder = require("./models/customReminder");
 const Super = require("./models/super");
 const SignUp = require("./models/signup");
@@ -144,4 +144,50 @@ app.delete("/CustomReminders", async (req, res) => {
 
   res.send("Deleted");
 });
+
+app.put("/Attendance", async (req, res, next) => {
+  const sid = req.body["sid"];
+  const subject = req.body["subject"];
+  const classesAttended = req.body["classesAttended"];
+  const classesMissed = req.body["classesMissed"];
+  const classStatus = req.body["classStatus"];
+
+  var result = await Attendance.findOne({
+    sid: sid,
+    subject: subject,
+  });
+
+  if (result != null) {
+    const query = { sid: sid, subject: subject };
+    const update = {
+      $set: {
+        sid: sid,
+        subject: subject,
+        classesAttended: classesAttended,
+        classesMissed: classesMissed,
+        status: classStatus,
+      },
+    };
+
+    await Attendance.updateOne(query, update);
+  } else {
+    var result = await Attendance.create({
+      sid: sid,
+      subject: subject,
+      classesAttended: classesAttended,
+      classesMissed: classesMissed,
+      classStatus: classStatus,
+    });
+  }
+  console.log("created/updated");
+  res.send("Created/Updated");
+});
+
+app.get("/Attendance/:sid", async (req, res) => {
+  const { sid } = req.params;
+  var response = await Attendance.find({ sid: sid });
+  res.send(response);
+});
+
+app.post("/UpdateAttendance");
 app.listen(port, () => {});
