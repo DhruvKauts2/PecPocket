@@ -1,4 +1,5 @@
 const { json } = require("express");
+const { MongoClient } = require('mongodb');
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -11,25 +12,30 @@ const LoggedIn = require("./models/login");
 const Subjects = require("./models/subjects");
 const Clubs = require("./models/club");
 const DB =
-  "mongodb+srv://kauts:eFcnmKIGq2PmRaQa@cluster0.ftzct.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://kauts:BCn1tnsH2G7WB3rE@cluster0.ftzct.mongodb.net/?retryWrites=true&w=majority";
 
 const bodyParser = require("body-parser");
-const port = 5000;
+const port = 3000;
 const cors = require("cors");
 const { Sign } = require("crypto");
 const SignUpModel = require("./models/signup");
+const { mainModule } = require("process");
 const corsOptions = {
   origin: "*",
   credentials: true,
   optionSuccessStatus: 200,
 };
 
-mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log("connection successful");
-  })
-  .catch((err) => console.log("Connection Failed"));
+const client = new MongoClient(DB);
+// mongoose
+//   .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => {
+//     console.log("connection successful");
+
+//   })
+//   .catch((err) => console.log(err));
+
+
 
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
@@ -38,11 +44,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post("/signUp", async (req, res) => {
-  var sid = req.body["sid"];
-  var superRecords = await Super.find({ sid: sid });
-  if (superRecords.length != 0) {
-    var signUpRecords = await SignUp.find({ sid: sid });
-    if (signUpRecords.length != 0) {
+  var sid = Number(req.body["sid"]);
+
+  console.log(sid);
+  await client.connect();
+
+  var superRecords = await client.db("myFirstDatabase").collection("supermodels").findOne({ sid: sid });
+
+  if (superRecords != null) {
+    var signUpRecords = await client.db("myFirstDatabase").collection("signupmodels").findOne({ sid: sid });
+
+    if (signUpRecords != null) {
       const query = { sid: sid };
       const update = {
         $set: {
@@ -51,21 +63,27 @@ app.post("/signUp", async (req, res) => {
         },
       };
 
-      await SignUp.updateOne(query, update);
+      await client.db("myFirstDatabase").collection("signupmodels").updateOne(query, update);
+      console.log("updated");
     } else {
-      await SignUp.create({ sid: sid, signedUp: 1 });
+      await client.db("myFirstDatabase").collection("signupmodels").insertOne({ sid: sid, signedUp: 1 });
+      console.log("created");
       res.send("200");
     }
   } else {
     res.send("404");
   }
   res.end();
+  await client.close();
+
 });
 
 app.get("/LogIn", async (req, res) => {
-  var sid = req.body["sid"];
-  var logInRecords = await LoggedIn.find({ sid: sid });
-  if (logInRecords.length != 0) {
+  var sid = Number(req.body["sid"]);
+  await client.connect();
+  var logInRecords = await client.db("myFirstDatabase").collection("loginmodels").findOne({ sid: sid });
+
+  if (logInRecords != null) {
     const query = { sid: sid };
     const update = {
       $set: {
@@ -74,16 +92,20 @@ app.get("/LogIn", async (req, res) => {
       },
     };
 
-    LoggedIn.updateOne(query, update);
+    await client.db("myFirstDatabase").collection("loginmodels").updateOne(query, update);
+    console.log("updated")
   } else {
-    await LoggedIn.create({ sid: sid, loggedIn: 1 });
+    await client.db("myFirstDatabase").collection("loginmodels").insertOne({ sid: sid, loggedIn: 1 });
+    console.log("created");
   }
 
   res.send("Logged In");
+  client.close();
 });
 
-app.get("/Subjects/:subject", async (req, res, next) => {
+app.get("/Subjects/:subject", async (req, res) => {
   const { subject } = req.params;
+  await client.connect();
   const query = { $text: { $search: subject } };
   const projection = {
     _id: 0,
@@ -91,15 +113,18 @@ app.get("/Subjects/:subject", async (req, res, next) => {
     subjectCode: "subjectCode",
   };
 
-  const result = await Subjects.find(query);
+  const result = await client.db("myFirstDatabase").collection("subjectmodels").findOne(query);
   res.send(result);
+  client.close();
 });
 
 app.get("/Clubs/:club", async (req, res, next) => {
   const { club } = req.params;
   const query = { $text: { $search: club } };
-  const result = await Clubs.find(query);
+  await client.connect();
+  const result = await client.db("myFirstDatabase").collection("clubmodels").findOne(query);
   res.send(result);
+  client.close();
 });
 
 app.post("/CustomReminders", async (req, res, next) => {
@@ -121,10 +146,14 @@ app.post("/CustomReminders", async (req, res, next) => {
   res.send("Created");
 });
 
-app.get("/CustomReminders/:sid", async (req, res) => {
-  const { sid } = req.params;
-  var result = await CustomReminder.find({ sid: sid });
+app.get("/CustomReminders/:dis", async (req, res) => {
+  await client.connect();
+  const { dis } = req.params;
+  console.log(dis);
+  var result = await client.db("myFirstDatabase").collection("remindermodels").findOne({ sid: Number(dis) });
   res.send(result);
+  console.log(result);
+  await client.close();
 });
 
 app.delete("/CustomReminders", async (req, res) => {
@@ -187,7 +216,8 @@ app.get("/Attendance/:sid", async (req, res) => {
   const { sid } = req.params;
   var response = await Attendance.find({ sid: sid });
   res.send(response);
+  console.log(response);
 });
 
 app.post("/UpdateAttendance");
-app.listen(port, () => {});
+app.listen(port, () => { });

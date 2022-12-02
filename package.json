@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon run index.js"
+    "dev": "nodemon run index.js",
+    "test": "nodemon run test-akshay.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "jquery-csv": "^1.0.21",
-    "mongoose": "^6.2.10",
+    "mongoose": "^6.7.5",
     "nodemon": "^2.0.15",
+    "npm-check-updates": "^16.4.3",
     "pretty": "^2.0.0"
   },
   "devDependencies": {
