@@ -146,10 +146,9 @@ app.post("/CustomReminders", async (req, res, next) => {
   res.send("Created");
 });
 
-app.get("/CustomReminders/:dis", async (req, res) => {
+app.get("/CustomReminders/:sid", async (req, res) => {
   await client.connect();
-  const { dis } = req.params;
-  console.log(dis);
+  const { sid } = req.params;
   var result = await client.db("myFirstDatabase").collection("remindermodels").findOne({ sid: Number(dis) });
   res.send(result);
   console.log(result);
@@ -157,13 +156,13 @@ app.get("/CustomReminders/:dis", async (req, res) => {
 });
 
 app.delete("/CustomReminders", async (req, res) => {
-  const sid = req.body["sid"];
+  const sid = Number(req.body["sid"]);
   const reminderTitle = req.body["reminderTitle"];
   const reminderDescription = req.body["reminderDescription"];
   const reminderDate = req.body["reminderDate"];
   const reminderTime = req.body["reminderTime"];
 
-  await CustomReminder.deleteOne({
+  await client.db("myFirstDatabase").collection("remindermodels").deleteMany({
     sid: sid,
     reminderTitle: reminderTitle,
     reminderDescription: reminderDescription,
@@ -174,14 +173,16 @@ app.delete("/CustomReminders", async (req, res) => {
   res.send("Deleted");
 });
 
-app.put("/Attendance", async (req, res, next) => {
+app.put("/Attendance", async (req, res) => {
   const sid = req.body["sid"];
   const subject = req.body["subject"];
-  const classesAttended = req.body["classesAttended"];
-  const classesMissed = req.body["classesMissed"];
+  const classesAttended = Number(req.body["classesAttended"]);
+  const classesMissed = Number(req.body["classesMissed"]);
   const classStatus = req.body["classStatus"];
 
-  var result = await Attendance.findOne({
+  await client.connect();
+
+  var result = await client.db("myFirstDatabase").collection("attendancemodels").findOne({
     sid: sid,
     subject: subject,
   });
@@ -198,9 +199,9 @@ app.put("/Attendance", async (req, res, next) => {
       },
     };
 
-    await Attendance.updateOne(query, update);
+    await client.db("myFirstDatabase").collection("attendancemodels").updateOne(query, update);
   } else {
-    var result = await Attendance.create({
+    var result = await client.db("myFirstDatabase").collection("attendancemodels").insertOne({
       sid: sid,
       subject: subject,
       classesAttended: classesAttended,
@@ -210,14 +211,15 @@ app.put("/Attendance", async (req, res, next) => {
   }
   console.log("created/updated");
   res.send("Created/Updated");
+  await client.close();
 });
 
 app.get("/Attendance/:sid", async (req, res) => {
   const { sid } = req.params;
-  var response = await Attendance.find({ sid: sid });
+  var response = await client.db("myFirstDatabase").collection("attendancemodels").findOne({ sid: sid });
   res.send(response);
   console.log(response);
+  await client.close();
 });
 
-app.post("/UpdateAttendance");
 app.listen(port, () => { });
